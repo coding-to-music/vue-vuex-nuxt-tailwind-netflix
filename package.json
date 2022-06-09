@@ -10,6 +10,9 @@
   "repository": {
     "url": "https://gitlab.com/victorgarciaesgi/vicflix.git"
   },
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "scripts": {
     "test:tsc": "tsc -p tsconfig.json",
     "test:diagnostics": "vti diagnostics",
@@ -18,6 +21,8 @@
     "start": "nuxt start",
     "build": "./scripts/build.sh",
     "deploy": "./scripts/deploy.sh",
+    "mydeploy": "git add . && git commit -m Build && git push",
+    "vercel": "npm run mydeploy && vercel --prod",
     "generate": "sgts generate",
     "lint": "eslint -c .eslintrc.js . --ext .ts,.vue --fix --ignore-path .gitignore",
     "patch": "npm version patch --no-git-tag-version",
